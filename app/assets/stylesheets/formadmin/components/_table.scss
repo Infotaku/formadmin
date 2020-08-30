@@ -85,10 +85,6 @@ table.index_table {
         background-color: shade($white, 5%);
       }
 
-      &:last-child td {
-        border-bottom: none;
-      }
-
       &.selected td {
         background-color: tint($yellow, 90%);
       }
@@ -150,13 +146,16 @@ table.index_table {
 
     tr {
       padding: 20px;
+
+      td:last-child {
+        border-bottom: 0 !important;
+      }
     }
 
     th,
     td {
       background: transparent !important;
-      border: 0 !important;
-      border-radius: 0 !important;
+      border-right: 0 !important;
       padding: 5px 0 !important;
 
       &:empty {

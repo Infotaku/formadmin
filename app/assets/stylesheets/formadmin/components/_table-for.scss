@@ -1,0 +1,50 @@
+table.index_table, table.table_for {
+  td {
+    padding: 6px 9px !important;
+
+    span {
+      margin-top: 6px;
+      margin-bottom: 6px;
+
+      &.column_header {
+        display: none;
+      }
+    }
+  }
+
+  @media #{$phone-and-tablet-screen} {
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      border: 1px solid #ccc;
+    }
+
+    td {
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      width: 100% !important;
+      overflow-y: auto;
+
+      .table_actions, span.column_value {
+        float: right;
+      }
+    }
+
+    td .column_header {
+      float: left;
+      display: block !important;
+      font-weight: bold;
+    }
+  }
+}
